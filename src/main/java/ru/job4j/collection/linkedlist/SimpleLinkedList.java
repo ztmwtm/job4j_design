@@ -15,8 +15,7 @@ public class SimpleLinkedList<E> implements LinkedList<E> {
     public void add(E value) {
         if (head == null) {
             head = new Node<>(value, null);
-        }
-        else {
+        } else {
             Node<E> node = head;
             while (node.next != null) {
                 node = node.next;
@@ -43,6 +42,7 @@ public class SimpleLinkedList<E> implements LinkedList<E> {
         return new Iterator<E>() {
             Node<E> currentNode = head;
             final int expectedModCount = modCount;
+
             @Override
             public boolean hasNext() {
                 if (expectedModCount != modCount) {
