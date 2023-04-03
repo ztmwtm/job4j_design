@@ -25,7 +25,7 @@ class ListUtilsTest {
 
     @Test
     void whenAddBeforeWithInvalidIndex() {
-        assertThatThrownBy(() -> ListUtils.addBefore(input, 3, 2))
+        assertThatThrownBy(() -> ListUtils.addBefore(input, 2, 2))
                 .isInstanceOf(IndexOutOfBoundsException.class);
     }
 
