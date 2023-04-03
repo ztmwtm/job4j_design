@@ -2,6 +2,8 @@ package ru.job4j.iterator;
 
 import static org.assertj.core.api.Assertions.*;
 import org.junit.jupiter.api.Test;
+import ru.job4j.collection.iterator.MatrixIt;
+
 import java.util.NoSuchElementException;
 
 class MatrixItTest  {
