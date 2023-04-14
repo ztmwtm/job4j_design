@@ -5,7 +5,6 @@ import org.junit.jupiter.api.Test;
 import java.util.Collections;
 import java.util.Set;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
-import static org.assertj.core.api.AssertionsForClassTypes.assertThatThrownBy;
 
 class AnalizeTest {
 
