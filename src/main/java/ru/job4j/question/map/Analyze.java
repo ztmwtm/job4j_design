@@ -1,13 +1,16 @@
-package ru.job4j.question;
+package ru.job4j.question.map;
+
+import ru.job4j.question.Info;
+import ru.job4j.question.User;
 
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Set;
 
-public class Analize {
+public class Analyze {
 
-    private Analize() {
+    private Analyze() {
     }
 
     public static Info diff(Set<User> previous, Set<User> current) {

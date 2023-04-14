@@ -1,6 +1,7 @@
-package ru.job4j.question;
+package ru.job4j.question.map;
 
 import org.junit.jupiter.api.Test;
+import ru.job4j.question.map.FreezeStr;
 
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;

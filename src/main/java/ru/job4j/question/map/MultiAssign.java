@@ -1,4 +1,4 @@
-package ru.job4j.question;
+package ru.job4j.question.map;
 
 import java.util.List;
 import java.util.Map;

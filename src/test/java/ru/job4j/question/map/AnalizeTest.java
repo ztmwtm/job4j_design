@@ -1,6 +1,8 @@
-package ru.job4j.question;
+package ru.job4j.question.map;
 
 import org.junit.jupiter.api.Test;
+import ru.job4j.question.Info;
+import ru.job4j.question.User;
 
 import java.util.Collections;
 import java.util.Set;
@@ -15,7 +17,7 @@ class AnalizeTest {
         User u3 = new User(3, "C");
         Set<User> previous = Set.of(u1, u2, u3);
         Set<User> current = Set.of(u1, u2, u3);
-        assertThat(Analize.diff(previous, current)).isEqualTo(new Info(0, 0, 0));
+        assertThat(Analyze.diff(previous, current)).isEqualTo(new Info(0, 0, 0));
     }
 
     @Test
@@ -25,7 +27,7 @@ class AnalizeTest {
         User u3 = new User(3, "C");
         Set<User> previous = Set.of(u1, u2, u3);
         Set<User> current = Set.of(u1, new User(2, "BB"), u3);
-        assertThat(Analize.diff(previous, current)).isEqualTo(new Info(0, 1, 0));
+        assertThat(Analyze.diff(previous, current)).isEqualTo(new Info(0, 1, 0));
     }
 
     @Test
@@ -35,7 +37,7 @@ class AnalizeTest {
         User u3 = new User(3, "C");
         Set<User> previous = Set.of(u1, u2, u3);
         Set<User> current = Set.of(u1, u3);
-        assertThat(Analize.diff(previous, current)).isEqualTo(new Info(0, 0, 1));
+        assertThat(Analyze.diff(previous, current)).isEqualTo(new Info(0, 0, 1));
     }
 
     @Test
@@ -45,7 +47,7 @@ class AnalizeTest {
         User u3 = new User(3, "C");
         Set<User> previous = Set.of(u1, u2, u3);
         Set<User> current = Set.of(u1, u2, u3, new User(4, "D"));
-        assertThat(Analize.diff(previous, current)).isEqualTo(new Info(1, 0, 0));
+        assertThat(Analyze.diff(previous, current)).isEqualTo(new Info(1, 0, 0));
     }
 
     @Test
@@ -55,7 +57,7 @@ class AnalizeTest {
         User u3 = new User(3, "C");
         Set<User> previous = Set.of(u1, u2, u3);
         Set<User> current = Set.of(new User(1, "AA"), u2, new User(4, "D"));
-        assertThat(Analize.diff(previous, current)).isEqualTo(new Info(1, 1, 1));
+        assertThat(Analyze.diff(previous, current)).isEqualTo(new Info(1, 1, 1));
     }
 
     @Test
@@ -65,7 +67,7 @@ class AnalizeTest {
         User u3 = new User(3, "C");
         Set<User> previous = Set.of(u1, u2, u3);
         Set<User> current = Collections.emptySet();
-        assertThat(Analize.diff(previous, current)).isEqualTo(new Info(0, 0, 3));
+        assertThat(Analyze.diff(previous, current)).isEqualTo(new Info(0, 0, 3));
     }
 
     @Test
@@ -75,14 +77,14 @@ class AnalizeTest {
         User u3 = new User(3, "C");
         Set<User> previous = Collections.emptySet();
         Set<User> current = Set.of(u1, u2, u3);
-        assertThat(Analize.diff(previous, current)).isEqualTo(new Info(3, 0, 0));
+        assertThat(Analyze.diff(previous, current)).isEqualTo(new Info(3, 0, 0));
     }
 
     @Test
     void whenEmpty() {
         Set<User> previous = Collections.emptySet();
         Set<User> current = Collections.emptySet();
-        assertThat(Analize.diff(previous, current)).isEqualTo(new Info(0, 0, 0));
+        assertThat(Analyze.diff(previous, current)).isEqualTo(new Info(0, 0, 0));
     }
 
     @Test
@@ -92,6 +94,6 @@ class AnalizeTest {
         User u3 = new User(3, "C");
         Set<User> previous = Set.of(u1, u2, u3);
         Set<User> current = Set.of(u1, new User(2, "BB"), new User(4, "CC"));
-        assertThat(Analize.diff(previous, current)).isEqualTo(new Info(1, 1, 1));
+        assertThat(Analyze.diff(previous, current)).isEqualTo(new Info(1, 1, 1));
     }
 }

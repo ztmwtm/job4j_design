@@ -1,6 +1,7 @@
-package ru.job4j.question;
+package ru.job4j.question.map;
 
 import org.junit.jupiter.api.Test;
+import ru.job4j.question.map.OuterFullJoiner;
 
 import java.util.List;
 import java.util.stream.Stream;
