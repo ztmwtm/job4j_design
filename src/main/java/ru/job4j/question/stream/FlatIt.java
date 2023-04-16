@@ -10,12 +10,12 @@ public class FlatIt {
     }
 
     public static List<Integer> flatten(Iterator<Iterator<Integer>> it) {
-        return iteratorToStream(it).flatMap(e -> StreamSupport.stream(Spliterators.spliteratorUnknownSize(e, Spliterator.ORDERED),false)).toList();
+        return iteratorToStream(it).
+                flatMap(e -> StreamSupport.stream(Spliterators.spliteratorUnknownSize(e, Spliterator.ORDERED), false))
+                .toList();
     }
 
     private static <T> Stream<T> iteratorToStream(Iterator<T> it) {
-        return StreamSupport.stream(
-                Spliterators.spliteratorUnknownSize(it, Spliterator.ORDERED),
-                false);
+        return StreamSupport.stream(Spliterators.spliteratorUnknownSize(it, Spliterator.ORDERED), false);
     }
 }
