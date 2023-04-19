@@ -1,5 +1,3 @@
-package ru.job4j.io;
-
 import java.io.FileInputStream;
 
 public class ReadFile {
